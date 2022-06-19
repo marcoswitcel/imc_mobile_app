@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imc_mobile_app/blocs/imc.bloc.dart';
+import 'package:imc_mobile_app/ui/screens/info_screen.dart';
 import 'package:imc_mobile_app/ui/widgets/text_input.widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,20 +37,36 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Padding _appBody() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(22.0, 14.0, 14.0, 14.0),
+      padding: const EdgeInsets.fromLTRB(14.0, 22.0, 14.0, 14.0),
       child: Column(
         children: <Widget>[
-          Container(
-            alignment: Alignment.centerRight,
-            child: const Icon(Icons.help),
+          Row(
+            children: [
+              const Expanded(
+                  child: Text(
+                '''
+Preencha os campos abaixo''',
+                style: TextStyle(fontSize: 20),
+              )),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => InfoScreen()));
+                },
+                child: const Icon(Icons.help),
+              )
+            ],
           ),
-          const SizedBox(height: 14),
-          TextInput('Peso (Kg)', bloc.pesoController),
-          const SizedBox(height: 14),
-          TextInput('Altura (cm)', bloc.alturaController),
-          const SizedBox(height: 14),
-          Text(bloc.resultado),
-          const SizedBox(height: 14),
+          const SizedBox(height: 20),
+          TextInput('Peso em Kilogramas', bloc.pesoController),
+          const SizedBox(height: 40),
+          TextInput('Altura em centímetros', bloc.alturaController),
+          const SizedBox(height: 30),
+          Text(
+            bloc.resultado,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 30),
           SizedBox(
             width: 225,
             height: 50,
@@ -59,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   bloc.calcula();
                 });
               },
-              child: const Text('Calcular'),
+              child: const Text('Calcular IMC'),
             ),
           )
         ],
