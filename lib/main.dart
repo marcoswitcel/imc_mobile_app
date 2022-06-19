@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imc_mobile_app/constants.dart';
-import 'package:imc_mobile_app/screens/home_screen.dart';
+import 'package:imc_mobile_app/ui/screens/home_screen.dart';
 
 void main() {
   runApp(const App());

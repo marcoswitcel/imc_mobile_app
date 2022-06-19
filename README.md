@@ -1,16 +1,9 @@
-# imc_mobile_app
+# Calculadora IMC (Flutter mobile)
 
-A new Flutter project.
+Aplicação mobile desenvolvida com Flutter que realiza o cálculo do IMC (índice de massa corporal).
 
-## Getting Started
+## Referências
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Um dos tutorias de referência usados: [https://www.youtube.com/watch?v=sLWGPVC_CVo](https://www.youtube.com/watch?v=sLWGPVC_CVo)
+* Biblioteca de máscaras usada: [https://pub.dev/packages/flutter_masked_text2](https://pub.dev/packages/flutter_masked_text2)
+* Documentação do Flutter: [https://docs.flutter.dev/](https://docs.flutter.dev/)
