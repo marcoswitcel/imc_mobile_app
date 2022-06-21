@@ -5,6 +5,7 @@ class ImcBloc {
   final MaskedTextController alturaController =
       MaskedTextController(mask: '000');
   String resultado = '';
+  bool invalido = false;
 
   calcula() {
     double? peso = double.tryParse(pesoController.text);
@@ -12,23 +13,25 @@ class ImcBloc {
 
     if (peso == null || altura == null) {
       resultado = 'Preencha todos os dados para calcular seu IMC';
+      invalido = true;
     } else {
+      invalido = false;
       altura /= 100;
       double imc = peso / (altura * altura);
       String imcFormatado = imc.toStringAsPrecision(2);
 
       if (imc > 40) {
-        resultado = 'Obesidade Grau III (imc: $imcFormatado)';
+        resultado = 'Seu IMC: $imcFormatado\nObesidade Grau III';
       } else if (imc > 34.9) {
-        resultado = 'Obesidade grau II (imc: $imcFormatado)';
+        resultado = 'Seu IMC: $imcFormatado\nObesidade grau II';
       } else if (imc > 29.9) {
-        resultado = 'Obesidade grau I (imc: $imcFormatado)';
+        resultado = 'Seu IMC: $imcFormatado\nObesidade grau I';
       } else if (imc > 24.9) {
-        resultado = 'Pré-obesidade (imc: $imcFormatado)';
+        resultado = 'Seu IMC: $imcFormatado\nPré-obesidade';
       } else if (imc > 18.6) {
-        resultado = 'Peso ideal (imc: $imcFormatado)';
+        resultado = 'Seu IMC: $imcFormatado\nPeso ideal';
       } else {
-        resultado = 'Abaixo do peso (imc: $imcFormatado)';
+        resultado = 'Seu IMC: $imcFormatado\nAbaixo do peso';
       }
     }
   }

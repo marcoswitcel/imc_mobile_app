@@ -62,10 +62,17 @@ Preencha os campos abaixo''',
           const SizedBox(height: 40),
           TextInput('Altura em centímetros', bloc.alturaController),
           const SizedBox(height: 30),
-          Text(
-            bloc.resultado,
-            textAlign: TextAlign.center,
-          ),
+          Text(bloc.resultado,
+              textAlign: TextAlign.center,
+              style: (bloc.invalido)
+                  ? const TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                    )
+                  : const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    )),
           const SizedBox(height: 30),
           SizedBox(
             width: 225,
