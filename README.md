@@ -1,6 +1,6 @@
 # Calculadora IMC (Flutter mobile)
 
-Aplicação mobile desenvolvida com Flutter que realiza o cálculo do IMC (índice de massa corporal).
+Aplicação mobile que realiza o cálculo do IMC(índice de massa corporal). Desenvolvida com o framework [Flutter](https://flutter.dev/) e a linguagem [Dart](https://dart.dev/).
 
 ## Referências
 
